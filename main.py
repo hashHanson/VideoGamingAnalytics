@@ -1,14 +1,12 @@
-import YoutubeSearch as ytSearch
+
 import jsonFlatten
 import pandas as pd
 import json
+import convertToCsv as ctc
 
 
 if __name__=='__main__':
-    result = ytSearch.youtube_search("Talking Tom","channel")
-    flattenJson = jsonFlatten.flatten_json(result)  
-    with open("/home/hashhanson123/VideoGamingAnalytics/OutputFiles/TalkingTom.json","w") as file:
-        json.dump(flattenJson,file)
+    ctc.JsonToCSV("KRASI - FIFA 20 TUTORIALS & SKILLS","channel","Fifa2020")
+    
 
-    pdResult = pd.read_json("/home/hashhanson123/VideoGamingAnalytics/OutputFiles/TalkingTom.json")
-    print(pdResult)
+  
